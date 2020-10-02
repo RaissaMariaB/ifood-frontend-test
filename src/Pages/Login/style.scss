@@ -1,6 +1,7 @@
 .login{
   display: flex;
   overflow: hidden;
+  height: 100vh;
   background-repeat: no-repeat ;
   font-family: 'Raleway', sans-serif;
 
@@ -14,14 +15,14 @@
     justify-content: center;
     background-color: #060125;
     padding: 100px;
-
+    flex-grow: 1;
 
     .login__content{
       text-align: center;
 
 
       .login__logo-spotify{
-        width: 400px;
+        width: 330px;
       }
 
       .login__text{

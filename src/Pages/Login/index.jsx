@@ -4,6 +4,8 @@ import ImgCoverDesktop from '../../assets/images/woman-listening.jpg'
 import ImgCoverMobile from '../../assets/images/mobile-login-background.jpg'
 import { ReactComponent as LogoSpotify } from '../../assets/images/logo-spotify-login.svg'
 
+import { getAuth } from '../../Service/Auth/users'
+
 import './style.scss'
 
 const Login = () => {
@@ -42,7 +44,7 @@ const Login = () => {
           Não toca a música toda<br/> mas toca seu coração
           <span role='img' className='login__heart' aria-label='Coração'>❤️</span>
         </h2>
-        <button aria-roledescription='realiza seu login com spotify' className='login__button'>
+        <button aria-roledescription='realiza seu login com spotify' className='login__button' onClick={getAuth}>
           Entrar com Spotify
         </button>
         </div>
