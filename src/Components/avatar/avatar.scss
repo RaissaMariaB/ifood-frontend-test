@@ -1,0 +1,17 @@
+.avatar__container{
+  border-radius: 50px;
+  border: 1px solid #5c5970;
+  height: 35px;
+  overflow: hidden;
+  width: 35px;
+
+  .avatar__img{
+    height: 100%;
+    width: auto;
+    border-style: none;
+  }
+}
+
+
+
+

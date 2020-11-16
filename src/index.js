@@ -1,17 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import {Provider} from 'react-redux';
+import Store from './Service/Store';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import { addToCart } from './store/modules/cart/actions'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Index = () => {
+  // Store.dispatch({ type: "@cart/add", product: "Bolo de cenoura"})
+  // React.useEffect(() => {
+  //   console.log(Store.getState(State => State));
+  // Store.dispatch(addToCart("Tapioca"))
+  // console.log(addToCart("banana"));
+  // console.log(addToCart("banana").product);
+  // const product = addToCart("coockie")
+  // Store.dispatch(product)
+  // Store.dispatch({ type: "@cart/add", product: "brownie"})
+  // Store.dispatch({ type: "@cart/remove", product: "coockie"})
+  // Store.dispatch({ type: "@cart/remove", product: "Tapioca"})
+  // },[])
+  return (
+    <Provider store={Store}>
+      <p>
+        HELLLOOO
+      </p>
+      <App />
+    </Provider>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export default Index;

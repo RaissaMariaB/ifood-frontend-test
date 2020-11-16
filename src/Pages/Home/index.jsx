@@ -1,5 +1,21 @@
 import React from 'react'
+// import { Container } from 'react-grid-system';
 
-const  Home = () => <h1> Hello World! </h1>
+import Topbar from "../../Containers/Topbar";
+
+import './home.scss';
+
+const Home = () => {
+
+  return(
+    <main className='home'>
+      {/* <Container > */}
+        <header className='home__header'>
+          <Topbar />
+        </header>
+    {/* </Container> */}
+      </main>
+  )
+}
 
 export default Home

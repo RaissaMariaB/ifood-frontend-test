@@ -1,18 +1,17 @@
-import React from 'react';
+import React from 'react'
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
-const App = () =>{
-
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact= {true} path='/' component={Login}></Route>
-        <Route  path='/home' component={Home}></Route>
+        <Route exact path="/" component={Login} />
+        <Route path="/home" component={Home} />
       </Switch>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,15 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { Link } from 'react-router-dom'
 
 import ImgCoverDesktop from '../../assets/images/woman-listening.jpg'
 import ImgCoverMobile from '../../assets/images/mobile-login-background.jpg'
 import { ReactComponent as LogoSpotify } from '../../assets/images/logo-spotify-login.svg'
 
 import { getAuth } from '../../Service/Auth/users'
+import { loginError, loginSucess } from '../../Service/Store/modules/login/actions'
+
+import Button from '../../Components/Button'
 
 import './style.scss'
 
+// dispatch({ type: FETCH_STUDENT, token: response.data.access_token });
+
 const Login = () => {
   const [ isMobile, setIsMobile ] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const signIn = () =>{
+      getAuth().then((token) => {
+      dispatch(loginSucess('@auth/LOGIN_SUCESS', token))
+
+    }).catch((error) => {
+      dispatch(loginError('@auth/LOGIN_ERROR', error))
+
+    })
+  }
 
   const resizeScreen = (event) => {
     const  screenWidth  = event.target.innerWidth
@@ -25,6 +45,7 @@ const Login = () => {
     window.addEventListener('resize', resizeScreen )
 
   }, [])
+
 
   return(
     <main className='login'>
@@ -44,15 +65,17 @@ const Login = () => {
           Não toca a música toda<br/> mas toca seu coração
           <span role='img' className='login__heart' aria-label='Coração'>❤️</span>
         </h2>
-        <button aria-roledescription='realiza seu login com spotify' className='login__button' onClick={getAuth}>
-          Entrar com Spotify
-        </button>
+          <Link to="/home">
+              <Button
+              roleDescription='realiza seu login com spotify'
+              onClick={() => signIn}
+              children='Entrar no Spotify'
+              />
+          </Link>
         </div>
       </div>
     </main>
-
   )
-
 }
 
 export default Login
