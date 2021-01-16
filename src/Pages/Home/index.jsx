@@ -1,5 +1,16 @@
 import React from 'react'
 
-const  Home = () => <h1> Hello World! </h1>
+import NavBar from '../../Containers/NavBar'
+import Container from '../../Containers/ContainerPages'
+import './styles.scss'
+
+const Home = () => {
+
+  return (
+      <Container>
+        <NavBar />
+      </Container>
+  )
+}
 
 export default Home

@@ -1,0 +1,10 @@
+.nav__container{
+  display: flex;
+  background-color: #060125;
+  padding: 8px 0;
+  position: fixed;
+  top: 0;
+  width: inherit;
+  z-index: 9999;
+  justify-content: space-between;
+}
